@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# 간단 정리 (작성 중)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. NODE JS 설치
+2. 프로젝트 폴더 생성
+3. 터미널 -> npx create-react-app [프로젝트명]
 
-## Available Scripts
+npm <-> npx 
+create-react-app : boilerplate 생성을 도와주는 node-js의 라이브러리
 
-In the project directory, you can run:
+App.js : 메인 페이지에 들어갈 HTML 작성, function 과 class 정의
 
-### `npm start`
+## 간단한작동원리 ##
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+App.js <-> index.js <-> index.html
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+index.js 에서 App.js 에 정의된것들을 가져와 index.html에 랜더링
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 디렉토리 구조 및 파일 ##
+1. node_modules 폴더: 라이브러리 모음
+2. public 폴더: static 파일 보관
+3. src 폴더: 소스코드 보관
+4. package.json : 설치한 라이브러리 목록
 
-### `npm run build`
+## JSX 문법 ##
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+div class 사용 불가 -> div className 사용
+데이터 바인딩을 쉽게 함
+전통적인 JS 데이터 바인딩인 document.getElementById().innerHTML 을 쓸 필요가 없다
+변수에 데이터를 담아 { 변수명, 함수 등 } 으로 데이터 바인딩
+<img src='이미지경로' /> 도 쓸 수 있지만 이미지를 import 하여 <img src = { 이미지 } /> 으로 호출 가능하다.
+이 외에도 src, id, href, className 등의 속성에도 적용 가능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+JSX에서 style 속성을 넣을 땐 style='font-size  :16px'> 의 문법이 아닌,
+style = { object 자료형으로 만든 스타일 } 같이 오브젝트 형식으로 삽입하여야 한다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+JSX는 camelCase 문법을 따른다
 
-### `npm run eject`
+## useState 사용법 ##
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. { useState } 임포트
+2. useState(데이터);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+state는 변수 대신 쓰는 데이터 저장공간이며, useState()를 이용하여 만든다.  
+관습적인 선언 방식은 [state 데이터, state 데이터 변경 함수] = useState(데이터); 가 된다.
+문자, 숫자, array, object 등 모든 데이터를 담아둘 수 있다.  
+변수에 선언하면 되지 않나 ? -> state에 데이터를 저장하는 이유는 Web이 App처럼 동작하게 만들기 위함이다.
+state 의 가장 큰 특징은 변경될 경우 HTML 이 재랜더링 되기 때문이다. (정렬, 수정 등의 액션이 일어날때 새로고침이 없어도 됨)
+자주 바뀌거나 중요한 데이터는 변수 말고 state 에 저장하는게 좋다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 문법 ##
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+이벤트 핸들러
+onClick = { 클릭될 때 실행할 함수 }
+onClick = { () => { 실행식 } }
