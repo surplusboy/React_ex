@@ -95,7 +95,9 @@ ex) arr1 = [1,2,3] -> arr2 = arr1 -> arr1 의 값 변경 -> arr2 도 같이 변�
 *Point*  
 변수1 & 변수2 이 RAM 을 가르키는 위치가 같게 되면, 변수1 == 변수2 를 비교해도 True가 된다. - console.log(copy == 글제목);  
 referance data type 이라는 특징   
-반드시 state 값의 변경은 state 변경 함수를 통해 변경 !
+반드시 state 값의 변경은 state 변경 함수를 통해 변경 !  
+state는 state를 사용하는 컴포넌트들 중 '최상위 컴포넌트'에 위치한다.
+
 <br>
 <br>
 ## 컴포넌트 문법 ##  
@@ -123,7 +125,7 @@ ex) const 컴포넌트명 = () => { return ( 실행식 ) } # 주로 const로 만
 <br>
 <br>
 
-## 동적인 UI 만들기 ##
+## 동적인 UI 만들기 3steps ##
 
 1. html, css 를 사용하여 디자인  
 2. UI 의 현재 상태를 state로 저장  
@@ -164,3 +166,37 @@ map 의 특징
 2. props 파라미터 등록 후 props.props_name 을 통해 호출  
 3. 관습적으로 props 의 선언은 넘겨줄 state 명과 동일화 한다.  
 4. props 에게 적용되는 문법은 파라미터 문법과 동일하다.
+
+<br/>
+<br/>
+
+## input 태그 다루기 ##  
+
+항상 닫는 태그가 존재 해야 한다.  
+&lt;input type='원하는 타입'/&gt;  
+외에 select, textarea 등 기존 html 에서의 태그들도 다 쓸 수 있음  
+<br/>
+이벤트 핸들러
+1. onChange, onInput 등등 연계해서 사용할 수 있는 핸들러들은 매우 많음. (약 30개)
+
+state 의 변경함수는 늦게 처리된다 → 비동기처리  
+
+## 이벤트 버블링 방지 ##
+  
+하위요소에 있는 이벤트가 상위요소로 퍼지는 현상   
+```html
+<span onClick={ (e)=>{ e.stopPropagation(); 실행식 }}>
+```  
+<br/>
+<br/>
+
+## 해봐야할 것 ##
+1. state -> 서버 -> DB 연동
+
+
+
+<br/>
+<br/>
+
+## 참고하면 좋을 링크 ##
+https://blog.naver.com/PostView.nhn?blogId=helicopter55&logNo=221873681114
