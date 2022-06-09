@@ -190,6 +190,29 @@ state 의 변경함수는 늦게 처리된다 → 비동기처리
 <br/>
 <br/>
 
+# 과거 리액트 문법에 대하여 ##    
+  
+1. component 를 만들 때
+```React
+class 이름 extends React.Component {
+  constructor() {
+    super()
+    this.state = { name : 'Test', age : 20 } // state 등도 constructor 함수 안에 정의
+  }
+
+  render(){
+    return (
+      <div> Test </div>
+      <p> { this.state.name } </p>
+    )
+  }
+}
+```
+class : 변수, 함수를 정의   
+extends : React.Component 를 상속   
+constructor : class의 변수, 초기값을 정의
+
+
 ## 해봐야할 것 ##
 1. state -> 서버 -> DB 연동
 
