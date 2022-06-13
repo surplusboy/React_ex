@@ -190,7 +190,7 @@ state 의 변경함수는 늦게 처리된다 → 비동기처리
 <br/>
 <br/>
 
-# 과거 리액트 문법에 대하여 ##    
+## 과거 리액트 문법에 대하여 ##    
   
 1. component 를 만들 때
 ```React
@@ -211,6 +211,19 @@ class 이름 extends React.Component {
 class : 변수, 함수를 정의   
 extends : React.Component 를 상속   
 constructor : class의 변수, 초기값을 정의
+
+<br>
+<br>
+<br>
+# 이어서 정리  
+<br>
+<br>
+## 리액트 부트스트랩 ## 
+js에서도 그렇듯 레이아웃을 쉽게 짤 수 있도록 도와주는 라이브러리  
+  
+링크 : https://react-bootstrap.github.io/getting-started/introduction
+
+
 
 
 ## 해봐야할 것 ##
