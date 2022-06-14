@@ -222,8 +222,23 @@ constructor : class의 변수, 초기값을 정의
 js에서도 그렇듯 레이아웃을 쉽게 짤 수 있도록 도와주는 라이브러리  
   
 링크 : https://react-bootstrap.github.io/getting-started/introduction
+  
+## img 삽입 시 ##
+1. css 파일에 background-image로 정의 
+2. js 에 import 문법 정의 (import 이름 from 경로)  
+  
+이미지는 src, public 모두 저장 가능하며, src에서는 상대경로 public에서는 절대경로를 사용한다.
 
 
+## 리액트 배포시 ##
+발행 전 html, js, css 파일을 압축하게 됨 (bundling)
+하지만 public 폴더에 있던건 원본 상태로 압축되지 않게 됨
+
+  
+  
+## import / export 문법 ##  
+함수, 컴포넌트 등도 export 가능  
+여러개를 export 할 땐 중괄호 안에 묶어야함
 
 
 ## 해봐야할 것 ##
