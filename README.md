@@ -234,12 +234,53 @@ js에서도 그렇듯 레이아웃을 쉽게 짤 수 있도록 도와주는 라�
 발행 전 html, js, css 파일을 압축하게 됨 (bundling)
 하지만 public 폴더에 있던건 원본 상태로 압축되지 않게 됨
 
-  
+<br/>
   
 ## import / export 문법 ##  
 함수, 컴포넌트 등도 export 가능  
 여러개를 export 할 땐 중괄호 안에 묶어야함
 
+<br/>
+## 싱글 페이지 어플리케이션 ## 
+리액트 미사용 시 페이지 분할  
+1. html 파일 생성 및 작성
+2. 클라이언트가 해당 경로 페이지 요청 시 1. 에서 작성 된 html 파일 렌더링
+
+리액트 사용 시 페이지 분할  
+1. 기본적으로 싱글 페이지 어플리케이션 (index.html 하나만 존재)
+2. 컴포넌트를 생성 및 작성
+3. 클라이언트가 해당 경로 요청 시 컴포넌트를 렌더링
+4. 이를 도와주는 라이브러리 react-router-dom 을 사용 
+
+## 리액트 라우팅 ## 
+
+설치 : npm install react-router-dom@6 // 6버전 설치  
+<br/>
+index.html
+```React
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+```
+<br/>
+
+
+App.js
+```React
+  return (
+    <div className="App">
+      <Routes>
+        <Route path='/detail' />
+        <Route />
+      </Routes>
+      .
+      .
+      .
+```
 
 ## 해봐야할 것 ##
 1. state -> 서버 -> DB 연동
