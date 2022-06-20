@@ -281,6 +281,23 @@ App.js
       .
       .
 ```
+<br/>
+<br/>
+
+## 리액트 라우팅의 Nested Routes ##  
+
+```React
+      <Route path='/about' element={<About/>}>
+        <Route path='member' element={<div><About/></div>}/>
+        <Route path='location' element={<div><About/></div>}/>  
+      </Route>
+```
+
+<br/>
+## 훅 함수 ##  
+1. useNavigate() : 페이지 이동을 도와 줌
+매개 변수에 1, -1이 들어 올 경우 다음, 이전 페이지 로딩 (스택)
+
 
 ## 해봐야할 것 ##
 1. state -> 서버 -> DB 연동
