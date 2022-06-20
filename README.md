@@ -291,6 +291,16 @@ App.js
         <Route path='member' element={<div><About/></div>}/>
         <Route path='location' element={<div><About/></div>}/>  
       </Route>
+      
+function About() {
+ return (
+  <div>
+    <h4>About</h4>
+    <Outlet></Outlet> // 아웃렛 설정을 해야 엘레먼트 출력
+  </div>
+ ) 
+}
+      
 ```
 
 <br/>
@@ -298,6 +308,68 @@ App.js
 1. useNavigate() : 페이지 이동을 도와 줌
 매개 변수에 1, -1이 들어 올 경우 다음, 이전 페이지 로딩 (스택)
 
+<br/>
+<br/>
+## URL 파라미터 문법 ##
+
+리액트 라우트는 매우 다양한 편의성을 제공
+```
+<Route path='/detail/:id' element={<Detail data={state}/>}/>
+```
+useParams() 함수를 사용  
+<br/>
+/detail/:id/test/:asdf 등 연장 사용 가능
+
+<br/>
+## styled-components 라이브러리 ##
+
+js 안에서 css 제어 가능  
+npm 으로 라이브러리 설치 후 사용
+
+```React
+import styled from 'styled-components'
+
+let YellowBtn = styled.button`
+    background : yellow;
+    color : black
+    padding : 10px;
+`
+let Box = styled.div`
+    background : ${ props => props.bg };
+    color : ${ props => props.bg == 'blue' ? 'white' : 'black' };
+    paddind : 20px
+`
+
+return (
+  <Box bg = 'yllow'/>
+)
+
+```
+이렇게 만든 변수는 컴포넌트 식으로 사용가능  
+props 도 적용 가능 (삼항연산 등 간단한 프로그래밍도 가능)  
+
+장점
+1. css 파일 굳이 안열어도 됨  
+2. 스타일이 다른 js파일을 오염시키지 않음 (이름.module.css 식으로 css파일을 작명하면 종속시킬 수 있음)
+3. 페이지 로딩 시간 단축 됨
+  
+단점  
+1. JS파일이 길어짐 (컴포넌트, 스타일 등 헷갈릴 수 있음)
+2. 중복스타일을 export, import 하게 되면 css와 다를 바 없음  
+3. 협업 시 CSS 담당의 숙련도 이슈  
+
+## 컴포넌트의 Life Cycle ##  
+
+1. mount : 마운트
+2. update : 업데이트
+3. unmount : 제거
+  
+useEffect() 함수 주 사용 목적  
+1. 고 성능 연산 처리 요구시
+2. 서버에서 데이터 가져올 시
+3. 타이머 장착 시
+  
+SideEffect : 함수의 핵심기능과 상관없는 부가기능
 
 ## 해봐야할 것 ##
 1. state -> 서버 -> DB 연동
